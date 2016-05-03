@@ -7,36 +7,54 @@
   <title>Deep Learning学习笔记 | 小酒馆</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Welcome to Hexo!
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+一.感知机感知机模型
+w和b根据网络情况不断进行调整
+
+传入函数：最常用的只有按照权重求和
+
+传输函数：有很多种
+
+
+1$ hexo new &quot;My New Post&quot;
 More info: Writing
-Run server1$ hexo server
+感知机的学习规则1$ hexo server
 More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy">
+二.多层感知机多层感知机学习算法：反向传播算法：反向传导算法的细节：从浅层学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deep Learning学习笔记">
 <meta property="og:url" content="http://yoursite.com/2016/05/03/Deep Learning学习笔记/index.html">
 <meta property="og:site_name" content="小酒馆">
 <meta property="og:description" content="Welcome to Hexo!
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+一.感知机感知机模型
+w和b根据网络情况不断进行调整
+
+传入函数：最常用的只有按照权重求和
+
+传输函数：有很多种
+
+
+1$ hexo new &quot;My New Post&quot;
 More info: Writing
-Run server1$ hexo server
+感知机的学习规则1$ hexo server
 More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy">
-<meta property="og:updated_time" content="2016-05-03T12:44:58.380Z">
+二.多层感知机多层感知机学习算法：反向传播算法：反向传导算法的细节：从浅层学">
+<meta property="og:updated_time" content="2016-05-03T13:03:06.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Deep Learning学习笔记">
 <meta name="twitter:description" content="Welcome to Hexo!
-Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+一.感知机感知机模型
+w和b根据网络情况不断进行调整
+
+传入函数：最常用的只有按照权重求和
+
+传输函数：有很多种
+
+
+1$ hexo new &quot;My New Post&quot;
 More info: Writing
-Run server1$ hexo server
+感知机的学习规则1$ hexo server
 More info: Server
-Generate static files1$ hexo generate
-More info: Generating
-Deploy">
+二.多层感知机多层感知机学习算法：反向传播算法：反向传导算法的细节：从浅层学">
   
     <link rel="alternative" href="/atom.xml" title="小酒馆" type="application/atom+xml">
   
@@ -101,7 +119,7 @@ Deploy">
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -256,15 +274,23 @@ Deploy">
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>!</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="一-感知机"><a href="#一-感知机" class="headerlink" title="一.感知机"></a>一.感知机</h2><h3 id="感知机模型"><a href="#感知机模型" class="headerlink" title="感知机模型"></a>感知机模型</h3><ol>
+<li><p>w和b根据网络情况不断进行调整</p>
+</li>
+<li><p>传入函数：最常用的只有按照权重求和</p>
+</li>
+<li><p>传输函数：有很多种</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="感知机的学习规则"><a href="#感知机的学习规则" class="headerlink" title="感知机的学习规则"></a>感知机的学习规则</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h2 id="二-多层感知机"><a href="#二-多层感知机" class="headerlink" title="二.多层感知机"></a>二.多层感知机</h2><h3 id="多层感知机学习算法："><a href="#多层感知机学习算法：" class="headerlink" title="多层感知机学习算法："></a>多层感知机学习算法：</h3><h3 id="反向传播算法："><a href="#反向传播算法：" class="headerlink" title="反向传播算法："></a>反向传播算法：</h3><h3 id="反向传导算法的细节："><a href="#反向传导算法的细节：" class="headerlink" title="反向传导算法的细节："></a>反向传导算法的细节：</h3><h3 id="从浅层学习到深度学习："><a href="#从浅层学习到深度学习：" class="headerlink" title="从浅层学习到深度学习："></a>从浅层学习到深度学习：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="三-稀疏自编码"><a href="#三-稀疏自编码" class="headerlink" title="三.稀疏自编码"></a>三.稀疏自编码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+<h2 id="四-卷积神经网络"><a href="#四-卷积神经网络" class="headerlink" title="四.卷积神经网络"></a>四.卷积神经网络</h2>
       
     </div>
     
