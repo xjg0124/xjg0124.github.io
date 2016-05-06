@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Caffe," />
 
 
 
@@ -84,15 +84,22 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小酒馆">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Training LeNet on MNIST with Caffe网络结构文件数据层定义：1234567891011121314layer &amp;#123; 	name: &quot;mnist&quot; 	type: &quot;Data&quot; 	transform_param &amp;#123; 		scale: 0.00390625 	&amp;#125; 	data_param &amp;#123; 		source: &quot;mnist_train">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Caffe训练过程(LeNet)">
+<meta property="og:url" content="http://yoursite.com/2016/05/06/Caffe训练过程-LeNet/index.html">
 <meta property="og:site_name" content="小酒馆">
-<meta property="og:description">
+<meta property="og:description" content="Training LeNet on MNIST with Caffe网络结构文件数据层定义：1234567891011121314layer &amp;#123; 	name: &quot;mnist&quot; 	type: &quot;Data&quot; 	transform_param &amp;#123; 		scale: 0.00390625 	&amp;#125; 	data_param &amp;#123; 		source: &quot;mnist_train">
+<meta property="og:image" content="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE%E7%89%871.png">
+<meta property="og:image" content="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE%E7%89%872.png">
+<meta property="og:image" content="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE%E7%89%873.png">
+<meta property="og:image" content="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE%E7%89%873.png">
+<meta property="og:image" content="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE%E7%89%874.png">
+<meta property="og:updated_time" content="2016-05-06T13:07:26.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小酒馆">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Caffe训练过程(LeNet)">
+<meta name="twitter:description" content="Training LeNet on MNIST with Caffe网络结构文件数据层定义：1234567891011121314layer &amp;#123; 	name: &quot;mnist&quot; 	type: &quot;Data&quot; 	transform_param &amp;#123; 		scale: 0.00390625 	&amp;#125; 	data_param &amp;#123; 		source: &quot;mnist_train">
+<meta name="twitter:image" content="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE%E7%89%871.png">
 
 
 
@@ -110,7 +117,7 @@
   };
 </script>
 
-  <title> 小酒馆 </title>
+  <title> Caffe训练过程(LeNet) | 小酒馆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -131,9 +138,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,9 +225,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -242,10 +247,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/06/Caffe训练过程-LeNet/" itemprop="url">
-                  Caffe训练过程(LeNet)
-                </a>
+                Caffe训练过程(LeNet)
               
             
           </h1>
@@ -285,9 +287,7 @@
       
 
       
-        
-          
-            <h2 id="Training-LeNet-on-MNIST-with-Caffe"><a href="#Training-LeNet-on-MNIST-with-Caffe" class="headerlink" title="Training LeNet on MNIST with Caffe"></a>Training LeNet on MNIST with Caffe</h2><h3 id="网络结构文件"><a href="#网络结构文件" class="headerlink" title="网络结构文件"></a>网络结构文件</h3><h4 id="数据层定义："><a href="#数据层定义：" class="headerlink" title="数据层定义："></a>数据层定义：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">layer &#123; </span><br><span class="line">	name: <span class="string">"mnist"</span> </span><br><span class="line">	<span class="built_in">type</span>: <span class="string">"Data"</span> </span><br><span class="line">	transform_param &#123; </span><br><span class="line">		scale: 0.00390625 </span><br><span class="line">	&#125; </span><br><span class="line">	data_param &#123; </span><br><span class="line">		<span class="built_in">source</span>: <span class="string">"mnist_train_lmdb"</span> </span><br><span class="line">		backend: LMDB </span><br><span class="line">		batch_size: 64 </span><br><span class="line">	&#125; </span><br><span class="line">	top: <span class="string">"data"</span> </span><br><span class="line">	top: <span class="string">"label"</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Training-LeNet-on-MNIST-with-Caffe"><a href="#Training-LeNet-on-MNIST-with-Caffe" class="headerlink" title="Training LeNet on MNIST with Caffe"></a>Training LeNet on MNIST with Caffe</h2><h3 id="网络结构文件"><a href="#网络结构文件" class="headerlink" title="网络结构文件"></a>网络结构文件</h3><h4 id="数据层定义："><a href="#数据层定义：" class="headerlink" title="数据层定义："></a>数据层定义：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">layer &#123; </span><br><span class="line">	name: <span class="string">"mnist"</span> </span><br><span class="line">	<span class="built_in">type</span>: <span class="string">"Data"</span> </span><br><span class="line">	transform_param &#123; </span><br><span class="line">		scale: 0.00390625 </span><br><span class="line">	&#125; </span><br><span class="line">	data_param &#123; </span><br><span class="line">		<span class="built_in">source</span>: <span class="string">"mnist_train_lmdb"</span> </span><br><span class="line">		backend: LMDB </span><br><span class="line">		batch_size: 64 </span><br><span class="line">	&#125; </span><br><span class="line">	top: <span class="string">"data"</span> </span><br><span class="line">	top: <span class="string">"label"</span> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>本层读取类型为lmdb的数据，batch size 为64，输入的像素进行归一化(所以scale的值为1/256即0.00390625。</li>
 <li>最后，本层产生两个blobs，一个是data，另一个是lable。</li>
@@ -332,440 +332,58 @@
 </li>
 </ul>
 
-          
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/03/无参考视频质量评价/" itemprop="url">
-                  无参考视频质量评价
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T21:16:58+08:00" content="2016-05-03">
-              2016-05-03
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
-          
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Caffe/" rel="tag">#Caffe</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>#无参考视频质量评价<br>根据失真视频与其相应的原始参考视频的比较程度，视频客观质量评估方法分为三大类：全参考方法(Full Reference)、部分参考方法(Reduced Reference)、无参考方法(No Reference)。三种方法如下图所示。</p>
-<p>无参考视频质量评价与全参考和部分参考质量评价模型相比，其输入只有失真图像和视频，输出是其质量分数，运算过程不需要任何原始信息，适合用于现实的应用场景，其原理图如下：</p>
-<p>目前的无参考视频质量评价方法，按照适用范围大致可分为两类：针对特定失真类型的专用型方法和适用于多种失真类型的通用型方法。</p>
-<p>对于第一类方法：指定失真类型</p>
-<pre><code>该方法采用量化已知类型的特有失真效果来评价图像质量。如针对模糊失真，在有模糊图像的基础上再加模糊和测量模糊图像边界延展性的方法;针对JPEG压缩失真，有计算块边界和块内活跃点及基于块边界方向统计的方法。
-</code></pre><p>对于第二类方法：用于多种失真类型的通用型</p>
-<pre><code>其又分为两种。基于训练学习的方法。这类方法首先提取图像的感知特征，然后利用训练学习算法来评价图像质量。例如，基于支持向量机学习的方法和基于神经网络训练的方法等。
-基于自然场景统计模型的方法。该方法假设自然图像或失真图像都只是所有图像信息的一个微小子集，然后试图通过寻找两者之间的差异来评价图像质量。
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/03/无参考视频质量评价/" rel="next" title="无参考视频质量评价">
+                <i class="fa fa-chevron-left"></i> 无参考视频质量评价
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/05/03/DPM-部分形变模型/" itemprop="url">
-                  DPM(部分形变模型)
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T21:16:12+08:00" content="2016-05-03">
-              2016-05-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/03/real-time-fire-and-flame detection/" itemprop="url">
-                  real-time fire and flame detection
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T21:13:47+08:00" content="2016-05-03">
-              2016-05-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/03/Deep Learning学习笔记/" itemprop="url">
-                  Deep Learning学习笔记
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T16:39:52+08:00" content="2016-05-03">
-              2016-05-03
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>!</p>
-<h2 id="一-感知机"><a href="#一-感知机" class="headerlink" title="一.感知机"></a>一.感知机</h2><h3 id="感知机模型"><a href="#感知机模型" class="headerlink" title="感知机模型"></a>感知机模型</h3><p><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE1.1.jpg" alt=""></p>
-<ol>
-<li><p>w和b根据网络情况不断进行调整</p>
-</li>
-<li><p>传入函数：最常用的只有按照权重求和</p>
-</li>
-<li><p>传输函数：有很多种</p>
-</li>
-</ol>
-<p>常用传输函数列表:</p>
-<p><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE1.2.jpg" alt=""><br>其中Sigmoid函数，它接收任意实数输入，并将结果对应到0和1之间。该函数是可导的。因此，在BP神经网络中使用该函数。</p>
-<h3 id="感知机的学习规则"><a href="#感知机的学习规则" class="headerlink" title="感知机的学习规则"></a>感知机的学习规则</h3><p>最简单的感知机学习规则：<br><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE1.3.png" alt=""><br><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE1.4.png" alt=""><br>其中，各个符号的含义如下：<br>    e：误差（e=t-a）<br>    t：期望输出<br>    a：实际输出<br>    p：输入<br>其他感知机网络的学习算法：<br>1.LMS：<br>LMS学习算法的权值和偏置跟新公式为：<br>w(k+1)= w(k)+ƞe(k)p(k)<br>w(k+1)= w(k)+ƞe(k)p(k)<br>w为权值，e为误差，p为神经元输入，b为偏置，ƞ为学习率，通常取0到1之间的小数<br>2.反向传播算法：</p>
-<h2 id="二-多层感知机"><a href="#二-多层感知机" class="headerlink" title="二.多层感知机"></a>二.多层感知机</h2><p>感知机的局限性——只能处理线性可分的问题</p>
-<p>多层感知机结构：<br><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.1.jpg" alt=""></p>
-<h3 id="多层感知机学习算法："><a href="#多层感知机学习算法：" class="headerlink" title="多层感知机学习算法："></a>多层感知机学习算法：</h3><p><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.2.png" alt=""><br>多层感知机网络中，误差要通过最后一层网络，逐层向前传播，用于调衡各层的权值连接。<br>    反向传播算法：<br>    每一个输出的误差为：ti-aoi  （t:期望输出，ao:输出层输出）<br>    神经网络均方误差为：<img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.3.jpg" alt=""><br>    使用梯度下降，要修正的权值就是e对w的偏导数：<img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.4.jpg" alt=""><br>    η为学习步长<br>    所以得：<img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.5.jpg" alt=""><br>其中，各个符号的含义如下：<br>    wih：输入层到中间隐层的权值<br>    wha：中间隐层到输出层的权值<br>    σh为第h个中间隐层神经元的对误差的敏感性<br>    σi为第i个输出层神经元对误差的敏感性<br>使用反向传播算法的多层感知机神经网络叫做BP神经网络</p>
-<h3 id="反向传播算法："><a href="#反向传播算法：" class="headerlink" title="反向传播算法："></a>反向传播算法：</h3><p>代价函数为：<br><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.6.png" alt=""><br>总代价函数为：<br><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.7.png" alt=""><br>第二项是规则化项（也叫权重衰减项） </p>
-<p>梯度下降法中每一次迭代都按照如下公式对参数W和b进行更新：<br><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.8.png" alt=""><br>其中a是学习速率。</p>
-<p>其中关键步骤是计算偏导数，反向传播是计算偏导数的一种有效方法。<br>总代价函数<img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.10.png" alt="">的偏导数：<br><img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.9.png" alt=""></p>
-<h3 id="反向传导算法的细节："><a href="#反向传导算法的细节：" class="headerlink" title="反向传导算法的细节："></a>反向传导算法的细节：</h3><p>1.进行前馈传导计算，利用前向传导公式，得到<img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.11.png" alt="">直到输出层<img src="http://o6lsmmv4m.bkt.clouddn.com/%E5%9B%BE2.12.png" alt="">的激活值。<br>2.对于第ni层（输出层）的每个输出单元i，我们根据以下公式计算残差：</p>
-<h3 id="从浅层学习到深度学习："><a href="#从浅层学习到深度学习：" class="headerlink" title="从浅层学习到深度学习："></a>从浅层学习到深度学习：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h2 id="三-稀疏自编码"><a href="#三-稀疏自编码" class="headerlink" title="三.稀疏自编码"></a>三.稀疏自编码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-<h2 id="四-卷积神经网络"><a href="#四-卷积神经网络" class="headerlink" title="四.卷积神经网络"></a>四.卷积神经网络</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -773,6 +391,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -792,8 +414,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars0.githubusercontent.com/u/16175051?"
@@ -836,6 +467,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Training-LeNet-on-MNIST-with-Caffe"><span class="nav-number">1.</span> <span class="nav-text">Training LeNet on MNIST with Caffe</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构文件"><span class="nav-number">1.1.</span> <span class="nav-text">网络结构文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据层定义："><span class="nav-number">1.1.1.</span> <span class="nav-text">数据层定义：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积层定义-第一个卷积层-："><span class="nav-number">1.1.2.</span> <span class="nav-text">卷积层定义(第一个卷积层)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#池化层定义-第一个池化层-："><span class="nav-number">1.1.3.</span> <span class="nav-text">池化层定义(第一个池化层) ：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全连接层定义-第一个-："><span class="nav-number">1.1.4.</span> <span class="nav-text">全连接层定义(第一个)：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU层定义："><span class="nav-number">1.1.5.</span> <span class="nav-text">ReLU层定义：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全连接层定义-第二个"><span class="nav-number">1.1.6.</span> <span class="nav-text">全连接层定义(第二个):</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Loss-层定义："><span class="nav-number">1.1.7.</span> <span class="nav-text">Loss 层定义：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层规则："><span class="nav-number">1.1.8.</span> <span class="nav-text">层规则：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定义MNIST-Solver："><span class="nav-number">1.1.9.</span> <span class="nav-text">定义MNIST Solver：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开始训练："><span class="nav-number">1.1.10.</span> <span class="nav-text">开始训练：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结果如下："><span class="nav-number">1.1.11.</span> <span class="nav-text">结果如下：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -939,6 +581,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
