@@ -84,16 +84,21 @@
 
 
 
-<meta name="description">
+<meta name="description" content="BING: Binarized Normed Gradients for Objectness Estimation at 300fps. Ming-Ming Cheng, Ziming Zhang, Wen-Yan Lin, Philip Torr, IEEE CVPR, 2014            
+            &amp;nbsp; &amp;nbsp; &amp;nbsp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="real-time fire and flame detection">
-<meta property="og:url" content="http://yoursite.com/2016/05/03/real-time-fire-and-flame detection/index.html">
+<meta property="og:title" content="BingObjectnessCVPR14">
+<meta property="og:url" content="http://yoursite.com/2016/05/29/BingObjectnessCVPR14/index.html">
 <meta property="og:site_name" content="小酒馆">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-05-03T13:14:53.969Z">
+<meta property="og:description" content="BING: Binarized Normed Gradients for Objectness Estimation at 300fps. Ming-Ming Cheng, Ziming Zhang, Wen-Yan Lin, Philip Torr, IEEE CVPR, 2014            
+            &amp;nbsp; &amp;nbsp; &amp;nbsp;">
+<meta property="og:image" content="http://yoursite.com/span style="color: rgb(68, 68, 68">
+<meta property="og:updated_time" content="2016-05-29T11:27:10.447Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="real-time fire and flame detection">
-<meta name="twitter:description">
+<meta name="twitter:title" content="BingObjectnessCVPR14">
+<meta name="twitter:description" content="BING: Binarized Normed Gradients for Objectness Estimation at 300fps. Ming-Ming Cheng, Ziming Zhang, Wen-Yan Lin, Philip Torr, IEEE CVPR, 2014            
+            &amp;nbsp; &amp;nbsp; &amp;nbsp;">
+<meta name="twitter:image" content="http://yoursite.com/span style="color: rgb(68, 68, 68">
 
 
 
@@ -111,7 +116,7 @@
   };
 </script>
 
-  <title> real-time fire and flame detection | 小酒馆 </title>
+  <title> BingObjectnessCVPR14 | 小酒馆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -241,7 +246,7 @@
             
             
               
-                real-time fire and flame detection
+                BingObjectnessCVPR14
               
             
           </h1>
@@ -253,8 +258,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-03T21:13:47+08:00" content="2016-05-03">
-              2016-05-03
+            <time itemprop="dateCreated" datetime="2016-05-29T19:05:05+08:00" content="2016-05-29">
+              2016-05-29
             </time>
           </span>
 
@@ -281,7 +286,8 @@
       
 
       
-        
+        <p><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><br>    <p><br>        <span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">BING: Binarized Normed Gradients for Objectness Estimation at 300fps. Ming-Ming Cheng, Ziming Zhang, Wen-Yan Lin, Philip Torr, IEEE CVPR, 2014<br><br>        </span><br>    </p><br></blockquote><br><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);"></span></p>
+<div style="text-align: left;"><br>    <p><br>        <span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">&nbsp; &nbsp; &nbsp; &nbsp; 这篇</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">CVPR2014</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">的论文作者是程明明教授。这篇论文主要讲了一种物体检测的算法，其作用是找到图像当中的候选的物体区域，说白了就是一种一般物体检测的算法。</span><br>    </p><br>    <p><br>        <span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">&nbsp; &nbsp; &nbsp; &nbsp; 一般物体检测的算法有许多种，以行人检测为例，传统的方法就是滑动窗口法。但是滑动窗口法也存在着许多问题。比如对于一幅<span style="font-family:Tahoma;">NXN</span><span style="font-family:宋体;">的图像来说，使用滑动窗口法所提取出的候选窗口有</span><span style="font-family:Tahoma;">N^4</span><span style="font-family:宋体;">的数量级之多。虽然可以通过一些特征和分类器对候选窗口进行过滤，但最终的结果仍然不是特别理想。而且传统的一些一般物体检测的算法在速度上也存在的一些不足。而程明明教授的这项工作使速度能达到</span><span style="font-family:Tahoma;">300fps</span><span style="font-family:宋体;">。</span></span><br>    </p><br>    <p><br>        <span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">&nbsp; &nbsp; &nbsp; &nbsp; “物体”的最大特点就是有<span style="font-family:Tahoma;">Well-defined closed boundary</span><span style="font-family:宋体;">，而背景则是杂乱无章的。程明明教授在论文中提出，在梯度空间图（</span><span style="font-family:Tahoma;">normed gradient space</span><span style="font-family:宋体;">）上，无论物体是长的还是宽的，只要归一化到一个相同的尺度上（例如</span><span style="font-family:Tahoma;">8<em>8</em></span><span style="font-family:宋体;">），它们的就变得十分有共性了，这时用</span><span style="font-family:Tahoma;">SVM</span><span style="font-family:宋体;">分类器就能把物体和非物体区分出来。&nbsp;</span></span><br>    </p><br>    <p><br>        <span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);"><span style="font-family:宋体;"><img src="span style=&quot;color: rgb(68, 68, 68" alt="">; font-family: 宋体; background-color: rgb(247, 252, 255);”&gt;<a href="http://o6lsmmv4m.bkt.clouddn.com/bing.png" target="_blank" rel="external">http://o6lsmmv4m.bkt.clouddn.com/bing.png</a></span>)<br><br>        </span><br>    </p><br></div><br><div style="text-align: left;"><br>    <span style="font-family: 宋体; background-color: rgb(255, 255, 255);"></span><br>    <p><br>        <span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">&nbsp; &nbsp; 如上</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">图</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">所示，</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">（a）中绿框代表背景，红框代表物体。</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">如果把这些框</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">resize<span style="font-family:宋体;">成固定的大小（文中给定为</span><span style="font-family:Tahoma;">88</span><span style="font-family:宋体;">），再求出每个</span><span style="font-family:Tahoma;">8<em>8</em></span><span style="font-family:宋体;">这些块中每个点的梯度</span></span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">（Normed Gradient</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">），则可以看出物体与背景</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">的梯度模式的差别</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">。如图（</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">c</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">）所示，左边红框中两个</span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">88<span style="font-family:宋体;">的梯度特征图为物体，右边绿框中四个</span><span style="font-family:Tahoma;">8<em>8</em></span><span style="font-family:宋体;">的梯度特征图为背景，物</span></span><span style="color:rgb(68, 68, 68);background:rgb(247, 252, 255);">体的梯度分布呈现出较为杂乱的模式，而背景的较为单一和清楚。</span><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);">作者为了得到如图（</span><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);">d</span><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);">）所示的</span><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);">88的梯度特征模型，采用了</span><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);">cascaded SVM</span><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);">（级联<span style="font-family:Tahoma;">SVM</span>）。</span><span style="color: rgb(68, 68, 68); background: rgb(247, 252, 255);">第一级SVM对所有的候选窗口进行粗过滤，第二级SVM，则是对每一个size的窗口分别设计（也就是设计了36个不同的SVM），不同的size会是物体的概率是不一样的，正方形的窗口就更可能是物体，而长条形的窗口就不太可能是。为了获取不同size的候选框，作者采样首先对原始图像进行不同尺度的resize，然后用训练好的SVM在resize后的每个8<em>8的模板上进行卷积，达到效果。（以200</em>200的图像为例，如要检测每个32<em>32的窗口大小是否会是物体，一般的做法就是先算整个图的梯度，然后隔点取32</em>32大小的框，再把框中的子图归一化到8<em>8的大小，最后送到cascaded SVM当中看得分。而作者的做法则是先把图像resize到50</em>50，然后计算梯度，然后再逐点取8*8大小的框，送到cascaded SVM当中看得分。这两步骤效果是差不多的，只是计算梯度的尺度不一样，但是后者只用做一次resize）。</span><br>    </p><br>    <br><br><br></div>
       
     </div>
 
@@ -305,17 +311,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/03/Deep Learning学习笔记/" rel="next" title="Deep Learning学习笔记">
-                <i class="fa fa-chevron-left"></i> Deep Learning学习笔记
+              <a href="/2016/05/06/Caffe训练过程-LeNet/" rel="next" title="Caffe训练过程(LeNet)">
+                <i class="fa fa-chevron-left"></i> Caffe训练过程(LeNet)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/03/DPM-部分形变模型/" rel="prev" title="DPM(部分形变模型)">
-                DPM(部分形变模型) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
